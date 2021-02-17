@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "Shared/_Layout.cshtml";
+}
+<body id="indexBody">
+<div class="index">
+    <p id="error" style="color:red; text-align:center;"></p>
+    <p id="ok" style="color:green; text-align:center;"></p>
+    <form class="addBook">
+        <input name="BookName" type="text" placeholder="Enter Book Name" />
+        <input name="WrittenDate" type="date" />
+        <button type="button" id="addB">Add</button>
+    </form>
+    <br />
+    <form action="/Home/ShowBooks" method="post" style="display:inline-block;">
+        <button id="AddA" type="submit">Add Author</button>
+    </form>
+
+    <form action="/Home/ShowBooksWithAuthorDetails" method="post" style="display:inline-block;">
+        <button id="SeeB" type="submit">See Books</button>
+    </form>
+   
+</div>
+    </body>

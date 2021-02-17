@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "Shared/_Layout.cshtml";
+}
+@model IEnumerable<Project_2_2.AppServices.BooksDetailsAppService.DTOs.FullInfoOutput>
+
+<div class="booksWithAuthor">
+    <table>
+        <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Written Time</th>
+            <th>Birth-Death Date</th>
+            <th>Birth Country</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.BookName</td>
+                <td>@item.Name @item.Lastname</td>
+                <td>@item.WrittenTime.ToShortDateString()</td>
+                @if (item.isAlive == true)
+                {
+                    <td>@item.BirthDate.ToShortDateString() - present </td>
+                }
+                else
+                {
+                    <td>@item.BirthDate.ToShortDateString() - @item.DeathDate?.ToShortDateString()</td>
+                }
+                <td>@item.BirthCounty.ToString()</td>
+            </tr>
+
+
+        }
+
+
+    </table>
+</div>

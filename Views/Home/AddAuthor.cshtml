@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "Shared/_Layout.cshtml";
+}
+@model Project_2_2.AppServices.BooksDetailsAppService.DTOs.BooksDetailsInput
+@using Project_2_2.Cores
+
+<div class="addAuthor">
+         
+        @if (Model.WrittenTime != DateTime.MinValue)
+        {
+    <form action="/Home/CreateAuthor" method="post">
+        <input type="text" value="@Model.Id" name="BookId" style="display:none;" />
+        <p style="color: #931a25;"><span class="titleText">Book Name:</span><b> @Model.BookName</b> </p>
+        <p style="color: #931a25;"><span class="titleText">Written Date:</span><b> @Model.WrittenTime.ToShortDateString() </b> </p>
+
+
+        <input type="text" name="Name" placeholder="Enter Author Name" />
+        <input type="text" name="Lastname" placeholder="Enter Author Lastname" />
+        <p>Author's Birth Date:</p>
+        <input type="date" name="BirthDate" />
+        <p>Author's Death Date: </p>
+        <input type="date" name="DeathDate" />
+
+        <select name="birthCountry">
+            <option value="" disabled selected hidden>Birth Country</option>
+            @foreach (var item in Enum.GetValues(typeof(CountryEnum)))
+            {
+                <option value="@item">@item</option>
+            }
+        </select>
+
+        <button type="submit" id="addAuthor">Add</button>
+
+    </form>
+        }
+     
+
+</div>

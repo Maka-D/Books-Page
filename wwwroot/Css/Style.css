@@ -1,0 +1,148 @@
+﻿body {
+    background-color: #fcf8ec;
+}
+div {
+    text-align: center;
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    line-height: 1em;
+}
+#indexBody{
+    background-image: url('/Tools/Images/BookWallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.index {
+    background-color: #d0e8f2;
+    margin-top: 150px;
+    border: 1px solid #456268;
+    max-width: 30%;
+    margin-left: 300px;
+    padding: 20px 20px;
+    padding-bottom: 40px;
+}
+
+#addB, #AddA, #SeeB {
+    background-color: #456268;
+    border: none;
+    color: white;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+#addB:hover, #AddA:hover, #SeeB:hover {
+    background-color: white;
+    color: #456268;
+}
+
+#HasAuthor {
+    color: #373a40;
+    margin-top: 0px;
+    font-size: 18px;
+}
+table {
+    width: 100%;
+    background-color: #d0e8f2;
+}
+table, th, td {
+    border: 1px solid #456268;
+}
+th {
+    height: 40px;
+    background-color: #456268;
+    color: #fcf8ec;
+}
+
+.showBooks {
+    font-size: 20px;
+    text-align: left;
+    padding-left: 20px;
+    color: #132743;
+}
+.bookInForeach {
+    border-bottom: 5px double #132743;
+    text-align: left;
+}
+#editButton, #deleteButton, #addAuthorButton, #addAuthor {
+    background-color: #00485F;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#editButton {
+    margin-left: 10px;
+}
+#editButton:hover {
+    background-color: #edf285;
+}
+    #deleteButton:hover {
+        background-color: #931a25;
+    }
+    #addAuthorButton:hover, #addAuthor:hover {
+        background-color: green;
+    }
+.titleText {
+    color: #222831;
+}
+.edit {
+    background-color: #d0e8f2;
+    margin-top: 10px;
+    border: 1px solid #456268;
+    padding: 5px 15px;
+    padding-bottom: 23px;
+    max-height: 60%;
+}
+.editAuthor {
+    margin-top: 17px;
+}
+#saveButton{
+    background-color: #16c79a;
+    border: none;
+    color: white;
+    padding: 8px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-top: 17px;
+}
+    #saveButton:hover {
+        background-color: darkgreen;
+    }
+input {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 6px 0;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+p{
+    text-align:left;
+    margin: 5px 5px;
+}
+.addAuthor{
+    margin-top: 50px;
+}

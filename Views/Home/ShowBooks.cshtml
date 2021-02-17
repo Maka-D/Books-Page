@@ -1,0 +1,35 @@
+﻿@{ 
+    Layout = "Shared/_Layout.cshtml";
+}
+@model IEnumerable<Project_2_2.AppServices.BooksDetailsAppService.DTOs.BooksDetailsInput>
+
+<div class="showBooks">
+
+    @foreach (var item in Model)
+    {
+        <div class="bookInForeach" style="display:block;">
+        <p style="display: inline-block; color: #931a25;"><span class="titleText">Book Name:</span> <b> @item.BookName </b> <span class="titleText">Written Time:</span> <b> @item.WrittenTime.ToShortDateString() </b> </p>
+
+            <form action="/Home/Edit" method="post" style="display:inline-block; ">
+                <button type="submit" name="BookId" value="@item.Id" id="editButton">Edit</button>
+            </form>
+
+            <form action="/Home/Delete" method="post" style="display:inline-block;">
+                <button type="submit" name="BookId" value="@item.Id" id="deleteButton">Delete</button>
+            </form>
+            @if (item.AuthorId == null)
+            {
+                <form action="/Home/AddAuthor" method="post" style="display: inline-block;">
+                    <button type="submit" name="bookId" value="@item.Id" id="addAuthorButton">Add Author</button>
+                </form>
+            }
+            else
+            {
+                <p id="HasAuthor">Book Already Has An Author</p>
+            }
+
+        </div>
+               
+            
+    }
+</div>

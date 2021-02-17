@@ -1,0 +1,50 @@
+﻿@{ 
+    Layout = "Shared/_Layout.cshtml";
+}
+@model Project_2_2.AppServices.BooksDetailsAppService.DTOs.FullInfoOutput
+@using Project_2_2.Cores
+
+<div class="edit">
+    <form action="/Home/Update" method="post">
+        <p>Book Name:</p>
+        <input value="@Model.BookName" name="BookName" placeholder="Book Name" />
+        <p>Written Date:</p>
+        <input value="@Model.WrittenTime.ToShortDateString()" name="WrittenTime" placeholder="Written Time" />
+        <div style="display: contents;">
+            @if (Model.AuthorId != 0)
+            {
+            <div style="display:block;" class="editAuthor">
+                <p>Author's Name:</p>
+                <input value="@Model.Name" name="Name" placeholder="Author's Name" />
+                <p>Author's Lastname:</p>
+                <input value="@Model.Lastname" name="Lastname" placeholder="Author's Lastname" />
+                <p>Birth Date:</p>
+                <input value="@Model.BirthDate.ToShortDateString()" name="BirthDate" placeholder="Birth Date" />
+                @if (Model.DeathDate == null)
+                {
+                    <p>Death Date:</p>
+                    <input name="DeathDate" placeholder="Death Date" type="date" />
+                }
+                else
+                {
+                    <p>Death Date:</p>
+                    <input value="@Model.DeathDate?.ToShortDateString()" name="DeathDate" placeholder="Death Date" />
+                }
+                <p>Birth Country:</p>
+                <select name="birthCountry">
+                    <option value="" disabled selected hidden>@Model.BirthCounty</option>
+                    @foreach (var item in Enum.GetValues(typeof(CountryEnum)))
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+
+            </div>
+            }
+        </div>
+
+        <button type="submit" value="@Model.BookId" name="BookId" id="saveButton">Save</button>
+    </form>
+</div>
+
+
